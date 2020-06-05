@@ -47,19 +47,19 @@ var substringMatcher = function(strs) {
     },
   });
 
-
     //attempting to simply allow for toggle of the boxes to different underlying whitelist TXT files.
-    var button1 = document.getElementById('CACI');
-    button1.addEventListener("click", ListChanger('CACI'));
+    //doesn't appear to be successfully tying these listeners to the buttons and it's not firing actively. Perhaps this is due to being in $SETUP versus being somewhere else - i'm not clear on when in the DOM ordering it should exist.
+    var button1 = document.getElementById("CACI");
+    button1.addEventListener("click", ListChanger("CACI"));
     
-    var button2 = document.getElementById('UDEV');
-    button2.addEventListener("click", ListChanger('UDEV'));
+    var button2 = document.getElementById("UDEV");
+    button2.addEventListener("click", ListChanger("UDEV"));
     
-    var button3 = document.getElementById('LGSDirect');
-    button3.addEventListener("click", ListChanger('LGSDirect'));
+    var button3 = document.getElementById("LGSDirect");
+    button3.addEventListener("click", ListChanger("LGSDirect"));
     
-    var button4 = document.getElementById('Critical Insight');
-    button4.addEventListener("click", ListChanger('Critical Insight'));
+    var button4 = document.getElementById("Critical Insight");
+    button4.addEventListener("click", ListChanger("Critical Insight"));
     
     function ListChanger(listname) {
       if (listname = 'CACI') {
@@ -77,8 +77,8 @@ var substringMatcher = function(strs) {
      }
     }
 
-
-//attempting to bind or align on-event listeners to the click against a found item.
+//attempting to bind or align on-event listeners to the click against a found item. This is using the typeahead:select portion of the library.
+// but it doesn't seem to fire the way i would expect when i click a suggestion item. It 'should' create a note for the user that tells them 'A-OK'.
 $('.typehead').bind('typeahead:select', function(ev, suggestion) {
   document.getElementById('result').innerHTML="The item you have chosen exists on the CACI Whitelist and may be able to be installed.";
   console.log('Selection: ' + suggestion);
