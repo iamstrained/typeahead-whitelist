@@ -79,19 +79,19 @@ var substringMatcher = function(strs) {
 
 //attempting to bind or align on-event listeners to the click against a found item. This is using the typeahead:select portion of the library.
 // but it doesn't seem to fire the way i would expect when i click a suggestion item. It 'should' create a note for the user that tells them 'A-OK'.
-$('.typehead').bind('typeahead:select', function(ev, suggestion) {
-  document.getElementById('result').innerHTML="The item you have chosen exists on the CACI Whitelist and may be able to be installed.";
-  console.log('Selection: ' + suggestion);
-});
+  $('.typehead').bind('typeahead:select', function(ev, suggestion) {
+    document.getElementById('result').innerHTML="The item you have chosen exists on the CACI Whitelist and may be able to be installed.";
+    console.log('Selection: ' + suggestion);
+  });
 
-var NotifyUser = function() {
-  document.getElementById('result').innerHTML="The item you have chosen exists on the CACI Whitelist and may be able to be installed.";
-}; 
+  var NotifyUser = function() {
+    document.getElementById('result').innerHTML="The item you have chosen exists on the CACI Whitelist and may be able to be installed.";
+  }; 
 
-var elements = document.getElementsByClassName("tt-suggestion tt-selectable");
+  var elements = document.getElementsByClassName("tt-suggestion tt-selectable");
 
-for (var i = 0; i < elements.length; i++) {
-    elements[i].addEventListener('click', NotifyUser, false);
-};
+  for (var i = 0; i < elements.length; i++) {
+      elements[i].addEventListener('click', NotifyUser, false);
+  };
 
 };
