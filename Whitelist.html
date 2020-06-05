@@ -1,37 +1,34 @@
 <head>
-    <link rel="stylesheet" href="appstyle.css">
+  <link rel="stylesheet" href="appstyle.css">
 
 </head>
 <body>
 
-    <script src="app/jquery-3.5.1.min.js"></script>
-    <script src="app/p5.js"></script>
-    <script src="app/typeahead.bundle.js"></script>
-    <script src="app/typeahead.jquery.js"></script>
-    <script src="app/whitelist.js"></script>
-    <script src="app/basics.js"></script>
-    <script src="app/bloodhound.js"></script>
-
-
-    <div id="whitelist-search">
-        <input class="typeahead" type="text" placeholder="Search for an Application">
-    </div>
-
-    <P></P>
-    <div id="result"></div>
-
-    <p id="demo"></p>
-
-    <div id="the-basics">
-        <input class="typeahead" type="text" placeholder="States of USA">
-      </div>
-
-      <div id="bloodhound">
-        <input class="typeahead" type="text" placeholder="States of USA">
-      </div>
-
-      <div class="typeahead__container">
-        <input id="type-ahead" type="text" class="form-control"/>
-    </div>
+  <div id="title">
+    <h1>CACI Application Whitelist Search</h1>
+    <p>Enter the application, framework, package or module name into the search box below. The search will list any item matching your query that exists on the whitelist.
+    <br>
+    If no match is found, the search will prompt you to submit a whitelist request.
+    </p>
+    <p>
+    Select a whitelist from the buttons below to begin your search.<br>
+    (Default is CACI.com listing.)
+  </p>
+  </p>
+    <input type="button" value="CACI" class="listbutton" ID="CACI" >
+    <input type="button" value="UDEV" class="listbutton" ID="UDEV" >
+    <input type="button" value="LGSDirect" class="listbutton" ID="LGSDirect">
+    <input type="button" value="Critical Insight" class="listbutton" ID="Critical Insight">
+    <p></p>
+  </div>
+  <div id="whitelist-search">
+      <input class="typeahead" type="text" placeholder="Search for an Application (min. 3-characters)">
+  </div>
+ <p></p>
+  <div id="result"></div>
+ <script src="app/jquery-3.5.1.min.js"></script>
+  <script src="app/p5.js"></script>
+  <script src="app/typeahead.jquery.js"></script>
+  <script src="app/whitelist.js"></script>
 
 </body>
