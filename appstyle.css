@@ -18,6 +18,14 @@ left: 40%;
 width: 697px;
 }
 
+#result {
+  position: relative;
+  text-align:center;
+  width: 697px;
+  left: 40%;
+  top:40%;
+}
+
 #custom-templates .empty-message {
     padding: 5px 10px;
    text-align: center;
