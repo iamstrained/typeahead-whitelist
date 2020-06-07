@@ -8,22 +8,24 @@
 
 }
 #whitelist-search {
-    position: relative; /* or absolute */
+    position: fixed; /* or absolute */
     top: 35%;
     left: 40%;
 }
+
 #search-lists {
 position: fixed;
 left: 40%;
 width: 697px;
 }
 
-#result {
+#bottom-controls {
   position: relative;
   text-align:center;
+  padding-top: 3px;
   width: 697px;
   left: 40%;
-  top:40%;
+  top:45%;
 }
 
 #custom-templates .empty-message {
@@ -33,7 +35,29 @@ width: 697px;
 
   /* scaffolding */
 /* ----------- */
-
+  .listbutton {
+    background-color:#45a15e;
+    border-radius:28px;
+    border:1px solid #18ab29;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:17px;
+    padding:16px 31px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
+    padding-bottom:2px;
+  }
+  .listbutton:hover {
+    background-color:#5cbf2a;
+  }
+  .listbutton:active {
+    position:relative;
+    top:1px;
+  }
+  
+        
 html {
     overflow-y: scroll;
     *overflow-x: hidden;

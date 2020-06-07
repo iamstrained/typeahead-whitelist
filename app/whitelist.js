@@ -58,26 +58,34 @@ var substringMatcher = function(strs) {
       if (listname == 'CACI') {
         whitelist = undefined  
         whitelist = loadStrings('app/applist.txt');
+        $('#whitelist-search .typeahead').typeahead('destroy');
           console.log(whitelist);
+          whiteliststart();
       } else if (listname == 'UDEV') {
         whitelist = undefined
         whitelist = loadStrings('app/udev-applist.txt');
+        $('#whitelist-search .typeahead').typeahead('destroy');
+        whiteliststart();
         console.log(whitelist);
       } else if (listname == 'LGSDirect') {
         whitelist = undefined
         whitelist = loadStrings('app/lgsdirect-applist.txt');
+        $('#whitelist-search .typeahead').typeahead('destroy');
+        whiteliststart();
         console.log(whitelist);
       } else if (listname == 'Critical Insight') {
         whitelist = undefined
         whitelist = loadStrings('app/criticalinsight-applist.txt');
+        $('#whitelist-search .typeahead').typeahead('destroy');
+        whiteliststart();
         console.log(whitelist);
      }
     }
-
+function whiteliststart () {
     $('#whitelist-search .typeahead').typeahead({
       hint: true,
       highlight: true,
-      minLength: 3,
+      minLength: 2,
       limit: 10
     },
     {
@@ -91,7 +99,11 @@ var substringMatcher = function(strs) {
         ].join('\n')
       },
     });
+  };
 
+
+//initalize the first list on-load
+whiteliststart()
 
 //attempting to bind or align on-event listeners to the click against a found item. This is using the typeahead:select portion of the library.
 // but it doesn't seem to fire the way i would expect when i click a suggestion item. It 'should' create a note for the user that tells them 'A-OK'.
@@ -110,4 +122,11 @@ var substringMatcher = function(strs) {
       elements[i].addEventListener('click', NotifyUser, false);
   };
  */
+ var resultbox = document.getElementById("result");
+ var button6 = document.getElementById("Reset");
+ button6.addEventListener("click", function() {
+  resultbox.innerHTML="",
+  document.getElementById("typeahead-search").value="";
+  });
+
 };
